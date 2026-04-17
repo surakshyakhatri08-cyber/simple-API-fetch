@@ -3,27 +3,27 @@ import ProfileCard from './components/ProfileCard';
 function App() {
   return (
     /* CSS for manage profile*/
-    <div className="flex flex-wrap items-center justify-center gap-8 min-h-screen bg-gray-100 p-10">
-      
+    <div className="flex items-center justify-center gap-8 bg-gray-100">
+
       {/* First Profile */}
-      <ProfileCard 
+      <ProfileCard
         name="Surakshya Khatri"
         role="Frontend Web Developer"
-        image="/my-photo.jpg" 
+        image="/my-photo.jpg"
       />
 
       {/* Second Profile */}
-      <ProfileCard 
+      <ProfileCard
         name="Kranti Pariyar"
         role="UI/UX Designer"
-        image="friend1.jpg" 
+        image="friend1.jpg"
       />
 
       {/* Third Profile */}
-      <ProfileCard 
+      <ProfileCard
         name="Prabin Basnet"
         role="Backend Developer"
-        image="friend2.jpg" 
+        image="friend2.jpg"
       />
 
     </div>
