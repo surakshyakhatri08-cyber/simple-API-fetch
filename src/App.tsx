@@ -2,7 +2,28 @@ import { useState } from 'react';
 import ProfileCard from './components/ProfileCard';
 
 function App() {
-  // Define state: default is true (showing profiles)
+  // Store user data in an array
+  const profiles = [
+    {
+      name: "Surakshya Khatri",
+      role: "Frontend Web Developer",
+      image: "/my-photo.jpg",
+      isOnline: true
+    },
+    {
+      name: "Kranti Pariyar",
+      role: "UI/UX Designer",
+      image: "friend1.jpg",
+      isOnline: false
+    },
+    {
+      name: "Prabin Basnet",
+      role: "Backend Developer",
+      image: "friend2.jpg",
+      isOnline: true
+    }
+  ];
+
   const [isVisible, setIsVisible] = useState(true);
 
   return (
@@ -19,29 +40,16 @@ function App() {
       {/* Conditional Rendering Logic */}
       {isVisible ? (
         <div className="flex flex-wrap items-center justify-center gap-8">
-          {/* First Profile */}
-          <ProfileCard
-            name="Surakshya Khatri"
-            role="Frontend Web Developer"
-            image="/my-photo.jpg"
-            isOnline={true}
-          />
-
-          {/* Second Profile */}
-          <ProfileCard
-            name="Kranti Pariyar"
-            role="UI/UX Designer"
-            image="friend1.jpg"
-            isOnline={false}
-          />
-
-          {/* Third Profile */}
-          <ProfileCard
-            name="Prabin Basnet"
-            role="Backend Developer"
-            image="friend2.jpg"
-            isOnline={true}
-          />
+          {/* Use map() to render ProfileCard and pass props dynamically */}
+          {profiles.map((profile, index) => (
+            <ProfileCard
+              key={index}
+              name={profile.name}
+              role={profile.role}
+              image={profile.image}
+              isOnline={profile.isOnline}
+            />
+          ))}
         </div>
       ) : (
         /* Message when profiles are hidden */
